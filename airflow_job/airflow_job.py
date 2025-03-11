@@ -24,7 +24,7 @@ with DAG(
 
     # Fetch environment variables
     env = Variable.get("env", default_var="dev")
-    gcs_bucket = Variable.get("gcs_bucket", default_var="airflow-projetcs-kv")
+    gcs_bucket = Variable.get("gcs_bucket", default_var="airflow-projects-kv")
     bq_project = Variable.get("bq_project", default_var="proven-record-452706-g5")
     bq_dataset = Variable.get("bq_dataset", default_var=f"flight_data_{env}")
     tables = Variable.get("tables", deserialize_json=True)
