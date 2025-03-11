@@ -13,7 +13,7 @@ This project demonstrates a **real-world data pipeline** that automates the **pr
 
 ---
 
-## ✅ **Project Overview**  
+## **Project Overview**  
 
 The goal of this project is to:  
 1. ✅ Automate the deployment of Spark jobs and Airflow DAGs using **CI/CD pipelines**.  
@@ -23,7 +23,7 @@ The goal of this project is to:
 
 ---
 
-## ✅ **Tech Stack Used**  
+## **Tech Stack Used**  
 
 | Component                      | Purpose                                                                                                                                       |  
 |-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|  
@@ -36,7 +36,7 @@ The goal of this project is to:
 
 ---
 
-## ✅ **Data Pipeline Flow**  
+## **Data Pipeline Flow**  
 
 Here’s how the data flows through the pipeline:  
 
@@ -61,7 +61,7 @@ Here’s how the data flows through the pipeline:
 
 ---
 
-## ✅ **BigQuery Tables Created**  
+## **BigQuery Tables Created**  
 
 | Table Name                        | Description                                                                                         |  
 |----------------------------------|----------------------------------------------------------------------------------------------------|  
@@ -71,7 +71,7 @@ Here’s how the data flows through the pipeline:
 
 ---
 
-## ✅ **Files Structure**  
+## **Files Structure**  
 
 The repository has the following structure:  
 
@@ -96,7 +96,7 @@ The repository has the following structure:
 
 ---
 
-## ✅ **Environment Setup**  
+## **Environment Setup**  
 
 ### Step 1: Clone the Repository  
 ```bash
@@ -115,7 +115,7 @@ In your **GitHub repository**, go to:
 
 ---
 
-## ✅ **Deployment Using CI/CD**  
+## **Deployment Using CI/CD**  
 
 The **CI/CD Pipeline (ci-cd.yaml)** is set up as:  
 
@@ -126,17 +126,17 @@ The **CI/CD Pipeline (ci-cd.yaml)** is set up as:
 
 ---
 
-## ✅ **Airflow DAG Overview**  
+## **Airflow DAG Overview**  
 
 The **Airflow DAG** performs the following tasks:  
 
-1. ✅ **Wait for File:** Uses `GCSObjectExistenceSensor` to detect when the file arrives.  
-2. ✅ **Trigger Spark Job:** Runs the Spark job in **Dataproc Serverless**.  
-3. ✅ **Load to BigQuery:** Pushes the transformed data to BigQuery tables.  
+1. **Wait for File:** Uses `GCSObjectExistenceSensor` to detect when the file arrives.  
+2. **Trigger Spark Job:** Runs the Spark job in **Dataproc Serverless**.  
+3. **Load to BigQuery:** Pushes the transformed data to BigQuery tables.  
 
 ---
 
-## ✅ **Data Processing Flow in Spark Job**  
+## **Data Processing Flow in Spark Job**  
 
 The **Spark Job** (`spark_transformation_job.py`) does the following:  
 
@@ -152,18 +152,18 @@ The **Spark Job** (`spark_transformation_job.py`) does the following:
 
 ---
 
-## ✅ **How to Test the Pipeline**  
+## **How to Test the Pipeline**  
 
-### ✅ **Upload CSV File to GCS**  
+### **Upload CSV File to GCS**  
 Upload a sample CSV file to the GCS bucket:  
 ```
 gs://airflow-projects-kv/airflow-project-1/source-dev/flight_booking.csv
 ```
 
-### ✅ **Trigger the DAG**  
+### **Trigger the DAG**  
 In **Airflow UI**, trigger the DAG manually.  
 
-### ✅ **Check BigQuery Tables**  
+### **Check BigQuery Tables**  
 Run queries in BigQuery:  
 ```sql
 SELECT * FROM `proven-record-452706-g5.flight_data_dev.transformed_table`;
@@ -173,7 +173,7 @@ SELECT * FROM `proven-record-452706-g5.flight_data_dev.origin_insights_table`;
 
 ---
 
-## ✅ **Troubleshooting**  
+## **Troubleshooting**  
 
 | Error                                              | Solution                                               |  
 |---------------------------------------------------|--------------------------------------------------------|  
@@ -183,7 +183,7 @@ SELECT * FROM `proven-record-452706-g5.flight_data_dev.origin_insights_table`;
 
 ---
 
-## ✅ **Screenshots Section**  
+## **Screenshots Section**  
 
 Here are the screenshots you should add under the `/images` folder:  
 
@@ -211,7 +211,7 @@ Here are the screenshots you should add under the `/images` folder:
 
 ---
 
-## ✅ **Conclusion**  
+## **Conclusion**  
 
 This project demonstrates a full-fledged **data engineering pipeline** for processing flight booking data with:  
 - ✅ **CI/CD Deployment.**  
@@ -223,70 +223,70 @@ This project demonstrates a full-fledged **data engineering pipeline** for proce
 ###  **Future Enhancements to Scale and Optimize the Flight Booking Data Pipeline** 
 
 
-### ✅ **1. Implement Real-time Streaming with Kafka** 🚀  
+### **1. Implement Real-time Streaming with Kafka** 🚀  
 - Replace the current batch processing with **real-time streaming** using **Kafka** or **Google Pub/Sub**.  
 - Stream live flight booking data, process it in **Spark Structured Streaming**, and push it to BigQuery.  
 - This will simulate real-world real-time booking systems like airline reservations.  
 
 ---
 
-### ✅ **2. Implement Delta Lake (Lakehouse Architecture)** 💎  
+### **2. Implement Delta Lake (Lakehouse Architecture)** 💎  
 - Use **Delta Lake** on **Databricks** to implement a **data lakehouse**.  
 - Ingest raw data into **Bronze layer**, transform data in **Silver layer**, and push insights to **Gold layer**.  
 - This approach will improve data governance, ACID transactions, and time-travel support.  
 
 ---
 
-### ✅ **3. Implement Slowly Changing Dimensions (SCD) in BigQuery** ⏳  
+### **3. Implement Slowly Changing Dimensions (SCD) in BigQuery** ⏳  
 - Modify the Spark job to implement **SCD Type 2** in BigQuery.  
 - Track historical changes (like booking modifications or cancellations) instead of overwriting data.  
 - This is useful for maintaining data history and tracking customer behavior.  
 
 ---
 
-### ✅ **4. Add Data Quality Checks Using Great Expectations** 📊  
+### **4. Add Data Quality Checks Using Great Expectations** 📊  
 - Integrate **Great Expectations (GE)** to validate incoming data in Spark before writing to BigQuery.  
 - Check for missing values, invalid dates, and null bookings to ensure data quality.  
 - Fail the pipeline if data quality doesn't meet set thresholds.  
 
 ---
 
-### ✅ **5. Automate Data Lineage and Metadata Management** 🗺️  
+### **5. Automate Data Lineage and Metadata Management** 🗺️  
 - Use **Google Data Catalog** or **OpenMetadata** to capture data lineage from source to destination.  
 - Track which data came from GCS, how Spark transformed it, and where it landed in BigQuery.  
 - This will make it easier to trace issues and understand data flow.  
 
 ---
 
-### ✅ **6. Add Monitoring and Alerting with Datadog/Grafana** 📈  
+### **6. Add Monitoring and Alerting with Datadog/Grafana** 📈  
 - Integrate **Datadog** or **Prometheus + Grafana** to monitor Spark job performance and Airflow DAG runs.  
 - Set up alerts if the Spark job fails, Airflow tasks are delayed, or data anomalies occur.  
 - This will help you monitor pipeline health in real-time.  
 
 ---
 
-### ✅ **7. Use Infrastructure as Code (IaC) with Terraform** 🏗  
+### **7. Use Infrastructure as Code (IaC) with Terraform** 🏗  
 - Automate the provisioning of GCS buckets, Dataproc clusters, BigQuery tables, and Airflow Composer using **Terraform**.  
 - This will enable easy replication of environments (Dev, QA, Prod) without manual setup.  
 - It ensures infrastructure is version-controlled and reproducible.  
 
 ---
 
-### ✅ **8. Deploy Spark Jobs Using KubernetesPodOperator** 🚀  
+### **8. Deploy Spark Jobs Using KubernetesPodOperator** 🚀  
 - Migrate from **Dataproc Serverless** to **KubernetesPodOperator** on GKE (Google Kubernetes Engine).  
 - This will give more control over resource allocation and scaling.  
 - You can also reduce costs by managing cluster resources efficiently.  
 
 ---
 
-### ✅ **9. Integrate Power BI / Looker for Reporting** 📊  
+### **9. Integrate Power BI / Looker for Reporting** 📊  
 - Connect BigQuery tables to **Power BI** or **Looker** for interactive dashboards.  
 - Build insights like booking success rate, popular routes, and origin patterns.  
 - This will provide clear business intelligence to stakeholders.  
 
 ---
 
-### ✅ **10. Implement Data Lakehouse with Hudi/Iceberg** 💎  
+### **10. Implement Data Lakehouse with Hudi/Iceberg** 💎  
 - Replace direct GCS-to-BigQuery processing with a **Data Lakehouse** using **Apache Hudi** or **Iceberg**.  
 - This will enable incremental data loads, ACID transactions, and time travel.  
 - It also reduces data duplication and improves performance.  
