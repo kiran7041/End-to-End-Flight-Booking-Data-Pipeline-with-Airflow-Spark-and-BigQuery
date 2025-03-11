@@ -43,7 +43,7 @@ jobs:
       # Sync Spark job to GCS
       - name: Upload Spark Job to GCS
         run: |
-          gsutil cp spark_job/spark_transformation_job.py gs://airflow-projetcs-kv/airflow-project-1/spark-job/
+          gsutil cp spark_job/spark_transformation_job.py gs://airflow-projects-kv/airflow-project-1/spark-job/
 
       # Sync Airflow DAG to Airflow DEV Composer
       - name: Upload Airflow DAG to DEV
@@ -89,7 +89,7 @@ jobs:
       # Sync Spark job to GCS
       - name: Upload Spark Job to GCS
         run: |
-          gsutil cp spark_job/spark_transformation_job.py gs://airflow-projetcs-kv/airflow-project-1/spark-job/
+          gsutil cp spark_job/spark_transformation_job.py gs://airflow-projects-kv/airflow-project-1/spark-job/
 
       # Sync Airflow DAG to Airflow PROD Composer
       - name: Upload Airflow DAG to PROD

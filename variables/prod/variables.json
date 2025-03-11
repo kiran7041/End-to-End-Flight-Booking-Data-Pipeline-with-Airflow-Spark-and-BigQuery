@@ -1,6 +1,6 @@
 {
     "env": "prod",
-    "gcs_bucket": "airflow-projetcs-kv",
+    "gcs_bucket": "airflow-projects-kv",
     "bq_project": "proven-record-452706-g5",
     "bq_dataset": "flight_data_prod",
     "tables": {
