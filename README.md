@@ -207,7 +207,7 @@ Here are the screenshots you should add under the `/images` folder:
 | **16**            | `/images/screenshot16.jpg` | Prod dataproc batch process generated. |  
 | **17**            | `/images/screenshot17.jpg` | Prod dataproc batch process logs. |  
 | **18**            | `/images/screenshot18.jpg` | Transformed data uploaded to prod Bigquery dataset. |  
-
+| **19**            | `/images/screenshot18.jpg` | Airflows environments running GCP composer . |  
 
 ---
 
